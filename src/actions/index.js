@@ -21,6 +21,8 @@ export const fetchPosts = () => async (dispatch) => {
   dispatch({ type: 'FETCH_POSTS', payload: resp.data})
   };
 
+  // All redux-thunk does is allow us to return functions OR actions from action creators. Very useful for async calls. Here, we return a function.
+
 export const fetchUser = (id) => async (dispatch) => {
   const resp = await jsonPlaceholder.get(`/users/${id}`)
   dispatch({ type: 'FETCH_USER', payload: resp.data})
